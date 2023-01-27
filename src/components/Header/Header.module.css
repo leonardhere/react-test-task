@@ -1,0 +1,21 @@
+.containerLinksItem{
+    list-style: none;
+    margin-left: 15px;
+}
+
+.containerLinksItem a{
+    text-decoration: none;
+}
+
+.headerContainerLinks{
+    display: flex;
+}
+
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px gray solid;
+    margin-bottom: 10px;
+    align-items: center;
+}
