@@ -1,27 +1,25 @@
 import { Menu } from 'antd';
-function getItem(label, key, icon, children, type) {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  };
-}
+import { useNavigate } from "react-router-dom";
+
 const items = [
-  getItem('Задачи', 'grp', null, [getItem('Новые', '13'), getItem('Закрытые', '14'), getItem('Архив', '14')], 'group'),
+    {label: 'Новые', key: '/newtasks'},
+    {label: 'Выполненные', key: '/donetasks'},
+    {label: 'Архив', key: '/archive'}
 ];
 const TaskMenu = () => {
-  const onClick = (e) => {
-    console.log('click ', e);
-  };
+  const navigate = useNavigate()
   return (
     <Menu
-      onClick={onClick}
+      onClick={({key}) => {
+        if(key) {
+          navigate(key)
+        }
+      }
+
+      }
       style={{
         width: 256,
       }}
-      defaultSelectedKeys={['1']}
       defaultOpenKeys={['sub1']}
       mode="inline"
       items={items}
